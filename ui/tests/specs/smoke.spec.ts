@@ -6,5 +6,5 @@ test("App - Has Title", async ({ page }) => {
     await page.goto(STUDIO_UI_URL);
 
     // Expect a title "to contain" a substring.
-    await expect(page).toHaveTitle(/Apicurio Studio/);
+    await expect(page).toHaveTitle(/Connectivity Link API Designer/);
 });

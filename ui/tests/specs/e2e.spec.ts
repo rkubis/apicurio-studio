@@ -7,7 +7,7 @@ const STUDIO_UI_URL: string = process.env["STUDIO_UI_URL"] || "http://localhost:
 
 test("End to End - Create draft", async ({ page }) => {
     await page.goto(STUDIO_UI_URL);
-    await expect(page).toHaveTitle(/Apicurio Studio/);
+    await expect(page).toHaveTitle(/Connectivity Link API Designer/);
 
     expect(page.getByTestId("btn-toolbar-create-draft")).toBeDefined();
 
@@ -33,7 +33,7 @@ test("End to End - Create draft", async ({ page }) => {
 
 test("End to End - Delete Design", async ({ page }) => {
     await page.goto(`${STUDIO_UI_URL}/drafts/e2e-test-group/e2e-test-api/1.0`);
-    await expect(page).toHaveTitle(/Apicurio Studio/);
+    await expect(page).toHaveTitle(/Connectivity Link API Designer/);
 
     // Click the Delete Draft button
     await page.getByTestId("draft-actions-dropdown").click();
