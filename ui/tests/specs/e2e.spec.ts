@@ -39,6 +39,8 @@ test("End to End - Delete Design", async ({ page }) => {
     const expectedPageUrlPattern: RegExp = /.+\/drafts\/e2e-test-group\/e2e-test-api\/1.0/;
     await expect(page).toHaveURL(expectedPageUrlPattern);
 
+    await page.waitForTimeout(10000);
+
     // Click the Delete Draft button
     await page.getByTestId("draft-actions-dropdown").click();
     await page.getByTestId("delete-draft").click();
