@@ -35,6 +35,10 @@ test("End to End - Delete Design", async ({ page }) => {
     await page.goto(`${STUDIO_UI_URL}/drafts/e2e-test-group/e2e-test-api/1.0`);
     await expect(page).toHaveTitle(/Connectivity Link API Designer/);
 
+    // Make sure we redirected to the draft details page.
+    const expectedPageUrlPattern: RegExp = /.+\/drafts\/e2e-test-group\/e2e-test-api\/1.0/;
+    await expect(page).toHaveURL(expectedPageUrlPattern);
+
     // Click the Delete Draft button
     await page.getByTestId("draft-actions-dropdown").click();
     await page.getByTestId("delete-draft").click();
